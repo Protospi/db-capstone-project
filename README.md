@@ -24,7 +24,18 @@ The following systems are utilized in the project:
 
 ## Scenario
 
-Little Lemon requires a booking system to track guest visits. In this first stage of the project, you will complete the following steps:
+Little Lemon needs to build a robust relational database system in MySQL in which they can store large amounts of data. They then need to easily manage and find this data as required. This database system should maintain information about the following aspects of the business:  
+
+- Bookings.
+- Orders.
+- Order delivery status.
+- Menu.
+- Customer details.
+- Staff information.
+
+## Project Steps
+
+Follow these steps to complete the Little Lemon Restaurant Database Schema and Entity Relationship Modeling project:
 
 1. **Repository Setup**:
    - Set up a repository or local directory to house your code.
@@ -39,21 +50,30 @@ Little Lemon requires a booking system to track guest visits. In this first stag
    - Share the Git repository with others involved in the project.
    - Allow others to view, review, and contribute to the code by providing appropriate access permissions.
 
-Please refer to the subsequent lectures and readings for detailed instructions on using Git, MySQL, Python, and Tableau for the project.
+4. **Design the Database Schema**:
+   - Create a normalized ER diagram adhering to 1NF, 2NF, and 3NF.
+   - Identify entities, attributes, primary keys, and foreign keys.
+   - Define data types and constraints.
 
-## Project Steps
+5. **Implement the Data Model**:
+   - Use MySQL Workbench's forward engineer method to implement the Little Lemon data model in the MySQL server.
+   - Name the database as "LittleLemonDB".
+   - Export the LittleLemonDB as a single contained SQL file and save it in the "db-capstone-project" folder.
 
-Follow these steps to complete the Little Lemon Restaurant Database Schema and Entity Relationship Modeling project:
+6. **Show Databases in MySQL Server**:
+   - Write SQL code inside MySQL Workbench SQL editor to show all databases in the MySQL server.
+   - Check if the Little Lemon database ("LittleLemonDB") is included in the list.
 
-1. Set up a Git repository to manage the project code and track changes.
-2. Design the database schema for the Little Lemon restaurant, considering tables, relationships, and attributes.
-3. Create the necessary SQL statements to create the database and tables in MySQL.
-4. Implement the database schema by executing the SQL statements in MySQL.
-5. Develop a Python application to communicate with the MySQL database.
-6. Write code to handle user input and update the database based on bookings and guest visits.
-7. Test the Python application to ensure it correctly interacts with the database.
-8. Explore the data using Tableau to extract meaningful information and generate visualizations.
-9. Analyze the data in Tableau and identify patterns or trends relevant to the restaurant's operations.
-10. Document the project, including the schema, SQL statements, Python code, and Tableau visualizations.
-11. Update the Git repository with all project files and changes made during the development process.
-12. Collaborate with others by sharing the Git repository and allowing them to review and contribute to the code.
+7. **Develop a Python Application**:
+   - Develop a Python application that communicates with the MySQL database.
+   - Write code to handle user input and update the database based on bookings and guest visits.
+   - Test the Python application to ensure it correctly interacts with the database.
+
+8. **Explore Data using Tableau**:
+   - Extract meaningful information from the database using Tableau.
+   - Generate visualizations and analyze the data for patterns or trends relevant to the restaurant's operations.
+
+9. **Documentation and Collaboration**:
+   - Document the project, including the schema, SQL statements, Python code, and Tableau visualizations.
+   - Update the Git repository with all project files and changes made during the development process.
+   - Collaborate with others by sharing the Git repository and allowing them to review and contribute to the code.
