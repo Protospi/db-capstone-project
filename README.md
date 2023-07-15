@@ -1,3 +1,4 @@
+
 # Meta Capstone Project: Little Lemon Restaurant Database Schema and Entity Relationship Modeling
 
 Welcome to the readme file for the Meta Capstone Project, focused on building the Little Lemon restaurant database schema and entity relationship modeling. This document provides an overview of the project and the systems used, as well as the steps to complete the project.
@@ -22,64 +23,22 @@ The following systems are utilized in the project:
    - Tableau is used for extracting and displaying meaningful information.
    - Visit [https://www.tableau.com/](https://www.tableau.com/) for more information.
 
-## Scenario
-
-Little Lemon needs to build a robust relational database system in MySQL in which they can store large amounts of data. They then need to easily manage and find this data as required. This database system should maintain information about the following aspects of the business:  
-
-- Bookings.
-- Orders.
-- Order delivery status.
-- Menu.
-- Customer details.
-- Staff information.
-
 ## Project Steps
 
 Follow these steps to complete the Little Lemon Restaurant Database Schema and Entity Relationship Modeling project:
 
-1. **Repository Setup**:
-   - Set up a repository or local directory to house your code.
-   - Initialize Git in the project directory using the `git init` command.
-
-2. **Record Changes**:
-   - Use Git to track and record all modifications made to the project.
-   - Add changes to the staging area using `git add <file>` or `git add .` (for all files).
-   - Commit changes with a descriptive message using `git commit -m "Commit message"`.
-
-3. **Collaboration**:
-   - Share the Git repository with others involved in the project.
-   - Allow others to view, review, and contribute to the code by providing appropriate access permissions.
-
-4. **Design the Database Schema**:
-   - Create a normalized ER diagram adhering to 1NF, 2NF, and 3NF.
-   - Identify entities, attributes, primary keys, and foreign keys.
-   - Define data types and constraints.
-
-5. **Implement the Data Model**:
-   - Use MySQL Workbench's forward engineer method to implement the Little Lemon data model in the MySQL server.
-   - Name the database as "LittleLemonDB".
-   - Export the LittleLemonDB as a single contained SQL file and save it in the "db-capstone-project" folder.
-
-6. **Show Databases in MySQL Server**:
-   - Write SQL code inside MySQL Workbench SQL editor to show all databases in the MySQL server.
-   - Check if the Little Lemon database ("LittleLemonDB") is included in the list.
-
-7. **Develop a Python Application**:
-   - Develop a Python application that communicates with the MySQL database.
-   - Write code to handle user input and update the database based on bookings and guest visits.
-   - Test the Python application to ensure it correctly interacts with the database.
-
-8. **Explore Data using Tableau**:
-   - Extract meaningful information from the database using Tableau.
-   - Generate visualizations and analyze the data for patterns or trends relevant to the restaurant's operations.
-
-9. **Documentation and Collaboration**:
-   - Document the project, including the schema, SQL statements, Python code, and Tableau visualizations.
-   - Update the Git repository with all project files and changes made during the development process.
-   - Collaborate with others by sharing the Git repository and allowing them to review and contribute to the code.
-
-
-Sure! Here is the revised Readme.md text that explains the relationships between the tables and how they conform to the third normal form (3NF):
+1. Set up a Git repository to manage the project code and track changes.
+2. Design the database schema for the Little Lemon restaurant, considering tables, relationships, and attributes.
+3. Create the necessary SQL statements to create the database and tables in MySQL.
+4. Implement the database schema by executing the SQL statements in MySQL.
+5. Develop a Python application to communicate with the MySQL database.
+6. Write code to handle user input and update the database based on bookings and guest visits.
+7. Test the Python application to ensure it correctly interacts with the database.
+8. Explore the data using Tableau to extract meaningful information and generate visualizations.
+9. Analyze the data in Tableau and identify patterns or trends relevant to the restaurant's operations.
+10. Document the project, including the schema, SQL statements, Python code, and Tableau visualizations.
+11. Update the Git repository with all project files and changes made during the development process.
+12. Collaborate with others by sharing the Git repository and allowing them to review and contribute to the code.
 
 ## Entity-Relationship Diagram (ERD) Analysis
 
@@ -88,13 +47,13 @@ The revised database schema represents the Little Lemon restaurant database and 
 **Bookings table:**
 - **Primary Key:** booking_id (Uniquely identifies each booking).
 - **Attributes:** date, slot_hours, table_number (Functionally dependent on the booking_id, 1NF).
-- **Foreign Key:** customer_id (References the primary key of the Customer Details table, ensuring referential integrity, 2NF).
+- **Foreign Key:** customer_id (References the primary key of the Customers table, ensuring referential integrity, 2NF).
 - **Relation Type:** One-to-many (One booking can have only one customer, but one customer can have multiple bookings).
 
 **Orders table:**
 - **Primary Key:** order_id (Uniquely identifies each order).
 - **Attributes:** order_date, total_cost (Functionally dependent on the order_id, 1NF).
-- **Foreign Keys:** staff_id (References the primary key of the Staff Information table, ensuring referential integrity, 2NF), customer_id (References the primary key of the Customers table, ensuring referential integrity, 2NF), order_delivery_id (References the primary key of the Orders Delivery table, ensuring referential integrity, 2NF).
+- **Foreign Keys:** staff_id (References the primary key of the Staff table, ensuring referential integrity, 2NF), customer_id (References the primary key of the Customers table, ensuring referential integrity, 2NF), order_delivery_id (References the primary key of the Orders Delivery table, ensuring referential integrity, 2NF).
 - **Relation Type:** One-to-many (One order can be associated with only one staff member, one customer, and one order delivery status, but one staff member, one customer, and one order delivery status can be associated with multiple orders).
 
 **Order Delivery Status table:**

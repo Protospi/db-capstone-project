@@ -102,24 +102,26 @@ CREATE TABLE IF NOT EXISTS `littleLemon`.`orders` (
   `order_date` DATE NOT NULL,
   `total_cost` DECIMAL(10,2) NOT NULL,
   `staff_id` INT NOT NULL,
-  `customer_id` VARCHAR(45) NULL,
+  `customer_id` INT NOT NULL, -- Changed to INT data type to reference the primary key in the `customers` table.
   PRIMARY KEY (`order_id`),
   INDEX `staff_id_idx` (`staff_id` ASC) VISIBLE,
+  INDEX `customer_id_idx` (`customer_id` ASC) VISIBLE,
   CONSTRAINT `staff_id`
     FOREIGN KEY (`staff_id`)
     REFERENCES `littleLemon`.`staff` (`staff_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `customer_id`
-    FOREIGN KEY ()
-    REFERENCES `littleLemon`.`customers` ()
+    FOREIGN KEY (`customer_id`)
+    REFERENCES `littleLemon`.`customers` (`customer_id`) -- Changed to reference the primary key `customer_id`.
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `orders_id`
     FOREIGN KEY (`order_id`)
     REFERENCES `littleLemon`.`orders_delivery` (`order_delivery_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION
+)
 ENGINE = InnoDB;
 
 
@@ -158,11 +160,12 @@ CREATE TABLE IF NOT EXISTS `littleLemon`.`bookings` (
   `customer_id` INT NOT NULL,
   PRIMARY KEY (`booking_id`),
   INDEX `customer_id_idx` (`customer_id` ASC) VISIBLE,
-  CONSTRAINT `customer_id`
+  CONSTRAINT `fk_booking_customer`
     FOREIGN KEY (`customer_id`)
     REFERENCES `littleLemon`.`customers` (`customer_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION
+)
 ENGINE = InnoDB;
 
 
