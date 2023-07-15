@@ -86,3 +86,7 @@ The revised database schema represents the Little Lemon restaurant database and 
 - **Primary Key:** item_type_id (Uniquely identifies each item type).
 - **Attributes:** item_type_name (Functionally dependent on the item_type_id, 1NF).
 - **Relation Type:** One-to-many (One item type can have multiple menu items, but one menu item can be associated with only one item type).
+
+## Entity Relation Diagram
+
+![Image Description](https://github.com/Protospi/db-capstone-project/blob/d1005371c592f238330e37f90ac84584f0724eee/ERD.png)
