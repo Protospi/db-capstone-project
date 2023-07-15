@@ -86,5 +86,3 @@ The revised database schema represents the Little Lemon restaurant database and 
 - **Primary Key:** item_type_id (Uniquely identifies each item type).
 - **Attributes:** item_type_name (Functionally dependent on the item_type_id, 1NF).
 - **Relation Type:** One-to-many (One item type can have multiple menu items, but one menu item can be associated with only one item type).
-
-The revised ERD complies with the third normal form (3NF) by ensuring data integrity, eliminating data redundancy, and representing the relationships between the entities in the Little Lemon restaurant database efficiently.
