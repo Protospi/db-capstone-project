@@ -77,3 +77,52 @@ Follow these steps to complete the Little Lemon Restaurant Database Schema and E
    - Document the project, including the schema, SQL statements, Python code, and Tableau visualizations.
    - Update the Git repository with all project files and changes made during the development process.
    - Collaborate with others by sharing the Git repository and allowing them to review and contribute to the code.
+
+
+# Entity-Relationship Diagram (ERD) Analysis
+
+**Bookings table:**
+- **Primary Key:** booking_id (Uniquely identifies each booking).
+- **Attributes:** date, slot_hours, table_number (Functionally dependent on the booking_id, 1NF).
+- **Foreign Key:** customer_id (References the primary key of the Customer Details table, ensuring referential integrity, 2NF).
+- **Relation Type:** One-to-many (One booking can have only one customer, but one customer can have multiple bookings).
+
+**Orders table:**
+- **Primary Key:** order_id (Uniquely identifies each order).
+- **Attributes:** order_date, quantity, total_cost (Functionally dependent on the order_id, 1NF).
+- **Foreign Keys:** booking_id (References the primary key of the Bookings table, ensuring referential integrity, 2NF), staff_id (References the primary key of the Staff Information table, ensuring referential integrity, 2NF).
+- **Relation Type:** One-to-many (One order can be associated with only one booking and one staff member, but one booking and one staff member can be associated with multiple orders).
+
+**Order Delivery Status table:**
+- **Primary Key:** order_id (Uniquely identifies each order delivery status).
+- **Attributes:** delivery_date, status (Functionally dependent on the order_id, 1NF).
+- **Foreign Key:** order_id (References the primary key of the Orders table, ensuring referential integrity, 2NF).
+- **Relation Type:** One-to-one (One order delivery status corresponds to one order).
+
+**Menu Items table:**
+- **Primary Key:** menu_item_id (Uniquely identifies each menu item).
+- **Attributes:** item_name, price, cuisine_id, item_type_id (Functionally dependent on the menu_item_id, 1NF).
+- **Foreign Keys:** cuisine_id (References the primary key of the Cuisine table, ensuring referential integrity, 2NF), item_type_id (References the primary key of the Item Type table, ensuring referential integrity, 2NF).
+- **Relation Type:** One-to-many (One menu item can be associated with only one cuisine and one item type, but one cuisine and one item type can be associated with multiple menu items).
+
+**Customer Details table:**
+- **Primary Key:** customer_id (Uniquely identifies each customer).
+- **Attributes:** customer_name, telefone, email (Functionally dependent on the customer_id, 1NF).
+- **Relation Type:** One-to-many (One customer can have multiple bookings, but one booking can have only one customer).
+
+**Staff Information table:**
+- **Primary Key:** staff_id (Uniquely identifies each staff member).
+- **Attributes:** role, salary (Functionally dependent on the staff_id, 1NF).
+- **Relation Type:** One-to-many (One staff member can be associated with multiple orders, but one order can be associated with only one staff member).
+
+**Cuisine table:**
+- **Primary Key:** cuisine_id (Uniquely identifies each cuisine).
+- **Attributes:** cuisine_name (Functionally dependent on the cuisine_id, 1NF).
+- **Relation Type:** One-to-many (One cuisine can have multiple menu items, but one menu item can be associated with only one cuisine).
+
+**Item Type table:**
+- **Primary Key:** item_type_id (Uniquely identifies each item type).
+- **Attributes:** item_type_name (Functionally dependent on the item_type_id, 1NF).
+- **Relation Type:** One-to-many (One item type can have multiple menu items, but one menu item can be associated with only one item type).
+
+The revised ERD adheres to the principles of the third normal form (3NF) by ensuring data integrity and eliminating data redundancy while representing the relationships between the entities in the Little Lemon restaurant database.
