@@ -90,3 +90,26 @@ The revised database schema represents the Little Lemon restaurant database and 
 ## Entity Relation Diagram
 
 ![Image Description](https://github.com/Protospi/db-capstone-project/blob/d1005371c592f238330e37f90ac84584f0724eee/ERD.png)
+
+
+## Database Procedures and Prepared Statement:
+
+1. **Stored Procedure: CancelOrder**
+   - **Description**: The `CancelOrder` stored procedure allows the user to cancel an order by providing the order ID. If the order exists, it deletes the order record from the `Orders` table and the related records from the `orders_menu` table (assuming it's a foreign key referencing the `Orders` table). If the order ID does not exist, it returns a message indicating that the order was not found.
+
+2. **Prepared Statement: GetOrderDetail**
+   - **Description:** The `GetOrderDetail` prepared statement retrieves the `OrderID`, `Quantity`, and `OrderCost` from the `Orders` table, linked with the `orders_menu` table using the `OrderID`. It accepts one input argument, the `CustomerID`, and returns the order details for the specified customer.
+
+3. **Stored Procedure: GetMaxQuantity**
+   - **Description:** The `GetMaxQuantity` stored procedure retrieves the order ID and the maximum quantity for each order from the `orders_menu` table. It groups the results by `order_id`.
+
+4. **View: orders_view**
+   - Description:** The `orders_view` view contains all records from the `Orders` table where the `order_id` exists in the `orders_menu` table and the `quantity` is greater than or equal to 2.
+
+5. **View: best_customers**
+   - Description: The `best_customers` view provides information about the best customers based on their total order cost. It joins records from the `Customers`, `Orders`, `orders_menu`, `menu_items`, and `cuisines` tables to retrieve details about customers who have a total cost greater than 150.
+
+6. **View: best_items**
+   - Description: The `best_items` view lists the best-selling items based on the quantity sold. It joins records from the `menu_items` and `cuisines` tables and selects only the items with a quantity greater than 2.
+
+These database procedures and views enhance the functionality and analytical capabilities of the database, allowing Little Lemon to manage orders efficiently, retrieve order details for specific customers, and obtain valuable insights about customers and popular items.
