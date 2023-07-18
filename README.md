@@ -113,3 +113,47 @@ The revised database schema represents the Little Lemon restaurant database and 
    - Description: The `best_items` view lists the best-selling items based on the quantity sold. It joins records from the `menu_items` and `cuisines` tables and selects only the items with a quantity greater than 2.
 
 These database procedures and views enhance the functionality and analytical capabilities of the database, allowing Little Lemon to manage orders efficiently, retrieve order details for specific customers, and obtain valuable insights about customers and popular items.
+
+Sure! Here's a summarized version of the steps to create the stored procedures and their functionalities, without the actual code, to be included in the Git README file:
+
+## Stored Procedures for Restaurant Booking System
+
+### Task 1: Create a New Procedure for Adding Bookings
+- Procedure Name: AddBooking
+- Input Parameters: 
+    - `booking_id` (INT)
+    - `date` (DATE)
+    - `slot_hour` (TIME)
+    - `table_number` (INT)
+    - `customer_id` (INT)
+- Description: This procedure allows adding new table booking records to the `Bookings` table in the database. It takes five input parameters representing booking details, such as `booking_id`, `date`, `slot_hour`, `table_number`, and `customer_id`.
+
+### Task 2: Create a New Procedure to Update Existing Bookings
+- Procedure Name: UpdateBooking
+- Input Parameters:
+    - `booking_id` (INT)
+    - `booking_date` (DATE)
+- Description: This procedure allows updating existing booking records in the `Bookings` table. It takes two input parameters: `booking_id` to identify the booking to be updated and `booking_date` to specify the new date for the booking.
+
+### Task 3: Create a New Procedure to Cancel Bookings
+- Procedure Name: CancelBooking
+- Input Parameters:
+    - `booking_id` (INT)
+- Description: This procedure allows canceling or removing a booking from the `Bookings` table based on the provided `booking_id`. It takes one input parameter to identify the booking to be canceled.
+
+### Task 4: Create a New Procedure to Check Table Availability
+- Procedure Name: CheckBooking
+- Input Parameters:
+    - `booking_date` (DATE)
+    - `table_number` (INT)
+- Description: This procedure checks whether a table in the restaurant is already booked for the given `booking_date` and `table_number`. It takes two input parameters to specify the date and table number for checking the availability.
+
+### Task 5: Create a New Procedure for Valid Bookings with Transaction Handling
+- Procedure Name: AddValidBooking
+- Input Parameters:
+    - `booking_date` (DATE)
+    - `table_number` (INT)
+    - `customer_name` (VARCHAR)
+- Description: This procedure ensures data integrity and minimizes conflicting bookings. It uses a transaction to handle booking verification and cancellation if the table is already booked. It takes three input parameters: `booking_date`, `table_number`, and `customer_name`.
+
+Please note that the actual code implementation for these stored procedures should be available in the respective files and databases in the repository. The README file should contain a brief overview and usage instructions for each stored procedure to help other developers understand and utilize the functionalities effectively.
