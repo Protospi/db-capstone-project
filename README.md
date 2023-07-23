@@ -174,4 +174,6 @@ Apologies for the confusion. Here are the placeholders for the images with the m
 
 All the analysis can be found in tableau public:
 
-[Tableua Public](https://public.tableau.com/authoring/LittleLemonMeta/CustomerSalesandProfit#1)
+[Tableau Public](https://public.tableau.com/authoring/LittleLemonMeta/CustomerSalesandProfit#1)
+
+[Git Hub Repo](https://github.com/Protospi/db-capstone-project)
