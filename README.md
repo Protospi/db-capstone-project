@@ -156,4 +156,22 @@ Sure! Here's a summarized version of the steps to create the stored procedures a
     - `customer_name` (VARCHAR)
 - Description: This procedure ensures data integrity and minimizes conflicting bookings. It uses a transaction to handle booking verification and cancellation if the table is already booked. It takes three input parameters: `booking_date`, `table_number`, and `customer_name`.
 
-## Analyse data in Tableau
+Apologies for the confusion. Here are the placeholders for the images with the markdown syntax to include them in the README file:
+
+### Customer Profit and Sales Analysis
+
+
+
+![Customer Sales Distribution](customer_sales.png)
+
+### Time Series Analysis of Profit by Year
+
+![Time Series Profit Analysis](profits_year.png)
+
+### Customer and Sales Dashboard
+
+![Customer and Sales Dashboard](dashboard.png)
+
+All the analysis can be found in tableau public:
+
+[Tableua Public](https://public.tableau.com/authoring/LittleLemonMeta/CustomerSalesandProfit#1)
