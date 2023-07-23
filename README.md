@@ -156,4 +156,4 @@ Sure! Here's a summarized version of the steps to create the stored procedures a
     - `customer_name` (VARCHAR)
 - Description: This procedure ensures data integrity and minimizes conflicting bookings. It uses a transaction to handle booking verification and cancellation if the table is already booked. It takes three input parameters: `booking_date`, `table_number`, and `customer_name`.
 
-Please note that the actual code implementation for these stored procedures should be available in the respective files and databases in the repository. The README file should contain a brief overview and usage instructions for each stored procedure to help other developers understand and utilize the functionalities effectively.
+## Analyse data in Tableau
